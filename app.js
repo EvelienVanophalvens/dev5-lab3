@@ -3,6 +3,7 @@ class App{
         this.getLocation();
         this.lat;
         this.lng;
+        this.getQuote();
     }
 
     getLocation(){
@@ -36,7 +37,23 @@ class App{
 
     }
 
-  
+    getQuote(){
+        let url = "https://cors-anywhere.herokuapp.com/https://zenquotes.io?api=random";
+        fetch(url, {
+            "method": "GET",
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            document.querySelector('#quote').innerHTML = data[0].q;
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    }
+
 
 
 
