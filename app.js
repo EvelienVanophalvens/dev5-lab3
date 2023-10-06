@@ -19,6 +19,23 @@ class App{
         console.log(err);
     }
 
+    getWeather(){
+        //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m
+        let url = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&timezone=auto&current_weather=true`;
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.querySelector('#weather').innerHTML = data.current_weather.temperature + '°C';
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+    }
+
   
 
 
