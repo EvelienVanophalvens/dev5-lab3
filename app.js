@@ -30,10 +30,12 @@ class App{
             .then(data => {
                 console.log(data);
                 document.querySelector('#weather').innerHTML = data.current_weather.temperature + '°C';
+                this.advertiment(data.current_weather.temperature);
             })
             .catch(err => {
                 console.log(err);
             })
+
 
     }
 
@@ -54,9 +56,13 @@ class App{
         });
     }
 
-
-
-
+    advertiment(temperature){
+        if(temperature < 10){
+            document.querySelector('#advertisment').style.backgroundImage  = "url('img/advertismentWinter.jpg')";
+        }else {
+            document.querySelector('#advertisment').style.backgroundImage  = "url('img/advertismentSummer.jpg')";
+        }
+    }
 
 }
 
