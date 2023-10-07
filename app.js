@@ -49,7 +49,7 @@ class App{
         })
         .then(data => {
             console.log(data);
-            document.querySelector('#quote').innerHTML = data[0].q;
+            document.querySelector('#quote').innerHTML = `"${data[0].q}"`;
         })
         .catch(err => {
             console.error(err);

@@ -3,4 +3,18 @@
     height: 280px;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#weather{
+    width: 90px;
+    height: 90px;
+    background-color: #006734;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 90px;
+    margin:0px 30px 30px 30px;
 }
